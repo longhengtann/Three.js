@@ -59,11 +59,16 @@ export default class Sketch {
 
     this.createSun();
     this.allPlane();
+    this.resize();
     this.render();
   }
 
-  setupResize() {
-    window.addEventListener('resize', this.resize.bind(this));
+  resize() {
+    window.addEventListener('resize', () => {
+      this.camera.aspect = window.innerWidth / window.innerHeight;
+      this.camera.updateProjectionMatrix();
+      this.renderer.setSize(window.innerWidth, window.innerHeight);
+    });
   }
 
   createSun() {
