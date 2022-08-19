@@ -1,7 +1,12 @@
+import ThreeApp from '../components/threejs/ThreeApp';
+import { useThree } from '../hooks/useThree';
+
 export default function Home() {
+  const canvas = useThree(ThreeApp);
+
   return (
-    <div className='flex flex-col gap-4 p-4'>
-      <div>Hello</div>
-    </div>
+    <>
+      <div ref={canvas} style={{ height: '100%', width: '100%' }} />
+    </>
   );
 }
