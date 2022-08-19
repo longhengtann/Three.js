@@ -1,0 +1,52 @@
+{
+  "name": "vg-next",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "test": "yarn lint:js && yarn lint:css",
+    "lint": "yarn lint:js:fix && yarn lint:css:fix",
+    "lint:js": "next lint",
+    "lint:js:fix": "yarn lint:js --fix",
+    "lint:css": "yarn stylelint \"src/**/*.css\"",
+    "lint:css:fix": "yarn lint:css --fix",
+    "prepare": "husky install"
+  },
+  "devDependencies": {
+    "eslint": "^8.19.0",
+    "eslint-config-next": "12.2.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "husky": "^8.0.0",
+    "lint-staged": ">=10",
+    "prettier": "^2.7.1",
+    "stylelint": "^14.9.1",
+    "stylelint-config-standard": "^26.0.0"
+  },
+  "dependencies": {
+    "@react-three/drei": "^9.22.7",
+    "@react-three/fiber": "^8.3.1",
+    "autoprefixer": "^10.4.7",
+    "axios": "^0.27.2",
+    "classnames": "^2.2.6",
+    "dat.gui": "^0.7.9",
+    "i18next": "^21.8.11",
+    "i18next-browser-languagedetector": "^6.1.0",
+    "next": "^12.2.0",
+    "numeral": "^2.0.6",
+    "postcss": "^8.4.14",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-i18next": "^11.8.12",
+    "recoil": "^0.7.4",
+    "tailwindcss": "^3.1.4",
+    "three": "^0.143.0",
+    "three-stdlib": "^2.13.1"
+  },
+  "_lint-staged": {
+    "*.js": "next lint --fix --file",
+    "*.css": "stylelint --fix"
+  }
+}
